@@ -12,6 +12,7 @@ puts "🌱 Seeding Nritya Acedomy..."
       location: Faker::Address.city,
       date: Faker::Date.forward(days: 20),
       start_time: "10:00 AM",
+      duration: Faker::Number.between(from: 1, to: 2),
       image: dance.last)
     
     user = User.create(
