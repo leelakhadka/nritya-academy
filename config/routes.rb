@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :reviews
     resources :bookings
-    resources :users, only: [:index, :show, :create]
+    resources :users, only: [:show, :create, :update]
     resources :dance_classes
+    # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+    post '/signin', to: 'sessions#create'
+    post '/signup', to: 'users#create'
+    get '/auth', to: 'users#show'
+    delete '/logout', to: 'sessions#destroy'
   end
 
   # Routing logic: fallback requests for React Router.
