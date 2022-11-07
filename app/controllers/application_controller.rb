@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   #before_action :authorized
-  #before_action :authorize_user, except: :current_user
+  before_action :authorize_user, except: :current_user
   # skip_before_action :authorize_user, only: [:current_user]
 
   #current_user and authorized_user
