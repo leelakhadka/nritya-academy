@@ -3,7 +3,6 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaSignInAlt } from "react-icons/fa";
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import axios from 'axios'
 
 function SignIn({ currentUser }) {
     const [showPassword, setShowPassword] = useState(false)
@@ -22,23 +21,26 @@ function SignIn({ currentUser }) {
         }))
     }
 
-    const onSubmit = async (e) => {
+    const onSubmit = (e) => {
         e.preventDefault()
 
         try {
-            const user = {
-                email,
-                password
-            }
-            axios.post('/api/signin', user)
-                .then(res => {
-                    console.log(res.data)
-                    if (res.data) {
-                        currentUser(res.data)
+            fetch('/api/signin', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log("Logged in successfully")
+                    if (data) {
+                        currentUser(data)
                         navigate('/')
                     }
-                }
-                )
+                })
         } catch (error) {
             toast.error('Bad User Credentials')
         }

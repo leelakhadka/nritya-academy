@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :authorize_user, only: [:show, :create, :update]
 
     def show
-        render json: current_user, status: :ok
+        render json: current_user, serializer: UserWithBookingsSerializer, include: ['bookings', 'bookings.dance_class'], status: :ok
     end
 
     def create
