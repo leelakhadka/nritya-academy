@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAuthStatus } from '../hooks/useAuthStatus'
 
-const PrivateRoute = () => {
-    const { loggedIn, checkingStatus } = useAuthStatus()
+const PrivateRoute = ({ currentUser }) => {
+    const { loggedIn, checkingStatus } = useAuthStatus(currentUser)
 
     if (checkingStatus) {
         return <p>Loading...</p>

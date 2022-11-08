@@ -7,7 +7,7 @@ function Navbar() {
         <footer className='navbar'>
             <nav className='navbarNav'>
                 <ul className='navbarListItems'>
-                    <li className='navbarListItem' onClick={() => navigate('/')}>
+                    <li className='navbarListItem' onClick={() => navigate('/available_classes')}>
                         <p>
                             Available Classes
                         </p>

@@ -1,29 +1,29 @@
 class DanceClassesController < ApplicationController
 
     def index
-        booking = DanceClass.all
-        render json: booking, status: :ok
+        danceClasses = DanceClass.all
+        render json: danceClasses, status: :ok
     end
 
     def show 
-        booking = DanceClass.find(params[:id])
-        render json: booking, status: :ok
+        danceClass = DanceClass.find(params[:id])
+        render json: danceClass, status: :ok
     end
 
     def create
-        @booking = DanceClass.create!(dance_class_params)
-        render json: @booking, status: :created
+        @danceClass = DanceClass.create!(dance_class_params)
+        render json: @danceClass, status: :created
     end
 
     def update
-        @booking = DanceClass.find(params[:id])
-        @booking.update!(dance_class_params)
-        render json: @booking, status: :ok
+        @danceClass = DanceClass.find(params[:id])
+        @danceClass.update!(dance_class_params)
+        render json: @danceClass, status: :ok
     end
 
     def destroy
-        @booking = DanceClass.find(params[:id])
-        @booking.destroy
+        @danceClass = DanceClass.find(params[:id])
+        @danceClass.destroy
         render json: {}, status: :no_content
     end
 
