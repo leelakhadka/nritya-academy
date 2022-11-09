@@ -63,7 +63,7 @@ function ReviewForm() {
                 color: '#000',
             }}>
             <form onSubmit={handleSubmit}>
-                <h2>Write a review on the above dance class</h2>
+                <h2>Write a review on the {danceClass.category} class</h2>
                 <RatingSelect select={setRating} selected={rating} />
                 <div className='review-input-group'>
                     <input className='review-input'
