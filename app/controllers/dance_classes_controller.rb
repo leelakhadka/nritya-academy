@@ -1,5 +1,7 @@
 class DanceClassesController < ApplicationController
 
+    skip_before_action :authorize_user, only: [:index]
+
     def index
         danceClasses = DanceClass.all
         render json: danceClasses, status: :ok

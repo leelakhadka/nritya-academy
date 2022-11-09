@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :reviews
     resources :bookings
-    resources :users, only: [:show, :create, :update]
+    resources :users, only: [:index, :show, :create, :update]
     resources :dance_classes
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
     post '/signin', to: 'sessions#create'

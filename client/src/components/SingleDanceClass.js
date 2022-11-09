@@ -8,14 +8,23 @@ import { ReviewProvider } from '../context/ReviewContext'
 function SingleDanceClass({ danceClass, user }) {
     let navigate = useNavigate();
 
-    const { category, location, date, start_time, duration, image } = danceClass
+    const { id, category, location, date, start_time, duration, image } = danceClass
 
     const handleToggle = () => {
-        if (user == null) {
-            toast.warn("Create User before booking this class");
+        if (user == "") {
+            toast.warn("SignUp/SignIn User before booking this class");
             navigate(`/sign-in`)
         } else {
-            navigate(`/booking`)
+            const bookings = user.bookings;
+            debugger
+
+            console.log(user);
+            if (bookings != null && bookings.length > 0 && bookings.filter(singleBooking => singleBooking.dance_class.id === id).length > 0) {
+                toast.warn("Already booked this class");
+                navigate(`/available_classes`)
+            } else {
+                navigate(`/booking`)
+            }
         }
     }
 
@@ -44,16 +53,17 @@ function SingleDanceClass({ danceClass, user }) {
                 </main>
             </div>
 
-
-            <div className='review-container'>
-                <ReviewProvider currentUser={user} currentDanceClass={danceClass}>
-                    <ReviewForm />
-                    <ReviewStats />
-                    <ReviewList />
-                </ReviewProvider>
-            </div>
-
-
+            {
+                user == "" ?
+                    <></> :
+                    <div className='review-container'>
+                        <ReviewProvider currentUser={user} currentDanceClass={danceClass}>
+                            <ReviewForm />
+                            <ReviewStats />
+                            <ReviewList />
+                        </ReviewProvider>
+                    </div>
+            }
         </>
     )
 }

@@ -33,14 +33,21 @@ function SignIn({ currentUser }) {
                     password
                 }),
             })
-                .then(r => r.json())
-                .then(data => {
-                    console.log("Logged in successfully")
-                    if (data) {
-                        currentUser(data)
-                        navigate('/')
+                .then(res => {
+                    if (res.ok) {
+                        res.json().then(data => {
+                            console.log("Logged in successfully")
+                            if (data) {
+                                currentUser(data)
+                                toast.success("Signed in successfully");
+                                navigate('/')
+                            }
+                        })
+                    } else {
+                        toast.error('Bad User Credentials or User not signed up')
+                        navigate('/sign-in')
                     }
-                })
+                });
         } catch (error) {
             toast.error('Bad User Credentials')
         }
