@@ -32,12 +32,12 @@ function SignUp({ currentUser }) {
                 first_name,
                 last_name,
                 email,
-                password
+                password,
+                admin: false
             }
             axios.post('/api/signup', user)
                 .then(res => {
-                    currentUser(res.data)
-                    navigate('/')
+                    navigate('/sign-in')
                 })
         } catch (error) {
             toast.error('Something went wrong with registration')

@@ -1,4 +1,11 @@
 puts "🌱 Seeding Nritya Acedomy..."
+admin = User.create(
+  first_name: "Admin First",
+  last_name: "Admin Last",
+  email: "admin@gmail.com",
+  password: "admin",
+  admin: true
+  )
 
   # Make 
   [["Jazz","https://st.depositphotos.com/1965665/3640/i/600/depositphotos_36403809-stock-photo-graceful-dancer.jpg"],
@@ -20,6 +27,7 @@ puts "🌱 Seeding Nritya Acedomy..."
       last_name: Faker::Name.last_name,
       email: Faker::Internet.email,
       password: Faker::Internet.password,
+      admin: false
       )
   
     # A booking belongs to a dance_class and a user, so we must provide those foreign keys

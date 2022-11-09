@@ -56,12 +56,18 @@ function App() {
     const id = newBooking.user_id
     fetch('/api/users/' + id)
       .then(r => r.json())
-      .then(data => setBooking(data.bookings))
+      .then(data => {
+        setBooking(data.bookings)
+        currentUser.bookings = data.bookings
+        setCurrentUser(currentUser)
+      })
   }
 
   const handleDeleteBooking = (deletedBooking) => {
     const filterdList = booking.filter(singleBooking => singleBooking.id !== deletedBooking.id);
     setBooking(filterdList);
+    currentUser.bookings = filterdList
+    setCurrentUser(currentUser)
   }
 
   const handleCurrentBooking = (singleCurrentBooking) => {
@@ -79,17 +85,20 @@ function App() {
     setDanceClass(dance_class)
   }
 
+  const handleNewDanceClass = (dance_class) => {
+    setClassList([dance_class, ...classList])
+  }
 
   return (
     <>
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<PrivateRoute currentUser={currentUser} />}>
-            <Route path='/profile' element={<Profile currentUser={currentUser} updatedUser={handleUpdatedUser} />} />
-          </Route>
           <Route path='/sign-in' element={<SignIn currentUser={setCurrentUser} />} />
           <Route path='/sign-up' element={<SignUp currentUser={setCurrentUser} />} />
+          <Route path='/profile' element={<PrivateRoute currentUser={currentUser} />}>
+            <Route path='/profile' element={<Profile currentUser={currentUser} updatedUser={handleUpdatedUser} createdDanceClass={handleNewDanceClass} logoutUser={setCurrentUser} />} />
+          </Route>
           <Route path='/available_classes' element={<AvailableClasses currentUser={currentUser} classList={classList} singleDanceClass={handleDanceClass} />} />
           <Route path='/available_classes/:danceClassId' element={<SingleDanceClass danceClass={danceClass} user={currentUser} />} />
           <Route path='/booking' element={<BookingForm danceClass={danceClass} currentUser={currentUser} newBooking={handleNewBooking} />} />

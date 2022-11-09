@@ -36,14 +36,6 @@ function Booking({ booking, deleteBooking, currentBooking }) {
                             <p className='bookingElement'>Paid: {fee}</p>
                             <p className='bookingElement'>Due: {10 - fee} </p>
                             <button className='btn btn-danger' onClick={handleClick}>Cancel this booking</button>
-
-                            {
-                                fee === 10 ?
-                                    <button type="button" className='btn-payed' disabled='true'>No Payment Due</button>
-                                    :
-                                    <button className='btn' onClick={handleToggle}>Pay Remaining Balance</button>
-
-                            }
                         </div>
                     </li>
                 </ul>

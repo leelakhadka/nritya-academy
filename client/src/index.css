@@ -556,6 +556,13 @@ button {
     margin: 0 auto;
 }
 
+.danceClassForm {
+    max-width: 400px;
+
+    margin-top: 60px;
+    margin-left: 0px;
+}
+
 .form-group {
     margin-bottom: 10px;
 }

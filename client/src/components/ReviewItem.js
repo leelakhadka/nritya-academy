@@ -8,7 +8,6 @@ function ReviewItem({ item }) {
     const [showButton, setShowButton] = useState(false)
 
     useEffect(() => {
-        debugger
         if (item.user.id === user.id) {
             setShowButton(true)
         }
