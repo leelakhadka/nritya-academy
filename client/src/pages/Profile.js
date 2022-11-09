@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios';
 
 function Profile({ currentUser, updatedUser }) {
+    debugger
     const navigate = useNavigate()
 
     console.log("profile")

@@ -35,7 +35,7 @@ function BookingForm({ danceClass, currentUser, newBooking }) {
             <section className="form">
                 <form onSubmit={formHandler}>
                     <section className='heading'>
-                        <p>You are about to book a class for student: {currentUser.id}</p>
+                        <p>Please pay the fee between 0 to 10 to book this class</p>
                     </section>
                     <div className='form-group'>
                         <input

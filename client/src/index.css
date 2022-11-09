@@ -422,6 +422,112 @@ button {
     align-items: center;
 }
 
+
+.singleDanceClass {
+    margin: 1rem;
+}
+
+@media (min-width: 2000px) {
+    .singleDanceClass {
+        margin: 3rem;
+    }
+}
+
+
+.singleDanceClass {
+    margin-bottom: 10rem;
+}
+
+.singleDanceClassListings {
+    padding: 0;
+}
+
+.singleDanceClassListing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.singleDanceClassListingsLink {
+    display: contents;
+}
+
+.singleDanceClassListingsImg {
+    width: 30%;
+    height: 400px;
+    border-radius: 1.5rem;
+    object-fit: cover;
+}
+
+@media (min-width: 1500px) {
+    .singleDanceClassListingsImg {
+        width: 50%;
+        height: 217px;
+    }
+}
+
+.singleDanceClassListingLocation {
+    font-weight: 800;
+    font-size: 3rem;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.singleDanceClassListingName {
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+.singleDanceClassListingDetails {
+    width: 65%;
+}
+
+@media (min-width: 1024px) {
+    .singleDanceClassListingDetails {
+        width: 79%;
+    }
+}
+
+.singleDanceClassListingElement {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 3rem;
+    color: #cba425;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.singleDanceClassListingHeading {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #5d2020;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.singleDanceClassBtn {
+    padding: px 4px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    appearance: button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .bookingElement {
     margin-top: 0.5rem;
     font-weight: 600;
@@ -521,10 +627,10 @@ button {
     max-width: 650px;
     padding: 0 20px;
 
-    margin-top: -380px;
+    margin-top: -650px;
     margin-bottom: 0px;
     margin-right: 0px;
-    margin-left: 600px;
+    margin-left: 850px;
 }
 
 .review-div {
@@ -532,7 +638,7 @@ button {
     color: #333;
     border-radius: 15px;
     padding: 40px 50px;
-    margin: 20px 0;
+    margin: 15px 0;
     position: relative;
 }
 
@@ -542,7 +648,7 @@ button {
 }
 
 .review-div h2 {
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 600;
     text-align: center;
 }
@@ -639,7 +745,7 @@ button {
 .reviewer {
     position: relative;
     width: 30px;
-    height: 50px;
+    height: 10px;
     padding: 5px;
     top: -44px;
     right: 10px;

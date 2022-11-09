@@ -21,23 +21,23 @@ function SingleDanceClass({ danceClass, user }) {
 
     return (
         <>
-            <div className='danceClass'>
-                <h1>{category} Class</h1>
+            <div className='singleDanceClass'>
+                <h1 className='singleDanceClassListingHeading'>Details</h1>
                 <main>
-                    <ul className='danceClassListings'>
-                        <li className='danceClassListing'>
+                    <ul className='singleDanceClassListings'>
+                        <li className='singleDanceClassListing'>
                             <img
                                 src={image}
                                 alt={category}
-                                className='danceClassListingsImg'
+                                className='singleDanceClassListingsImg'
                             />
-                            <div className='danceClassListingDetails'>
-                                <p className='danceClassListingName'>{category}</p>
-                                <p className='danceClassListingLocation'>{location}</p>
-                                <p className='danceClassListingElement'>{date}</p>
-                                <p className='danceClassListingElement'>{start_time}</p>
-                                <p className='danceClassListingElement'>{duration} hour</p>
-                                <button className='btn' onClick={handleToggle}>Book this class</button>
+                            <div className='singleDanceClassListingDetails'>
+                                <p className='singleDanceClassListingName'>{category}</p>
+                                <p className='singleDanceClassListingLocation'>{location}</p>
+                                <p className='singleDanceClassListingElement'>{date}</p>
+                                <p className='singleDanceClassListingElement'>{start_time}</p>
+                                <p className='singleDanceClassListingElement'>{duration} hour</p>
+                                <button className='singleDanceClassBtn' onClick={handleToggle}>Book this class</button>
                             </div>
                         </li>
                     </ul>
