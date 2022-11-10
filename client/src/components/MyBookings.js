@@ -2,7 +2,6 @@ import React from "react";
 import Booking from "./Booking";
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
-import timeGridPlugin from '@fullcalendar/timegrid';
 
 
 function MyBookings({ currentUser, userBookings, deleteBooking, currentBooking }) {
@@ -12,12 +11,7 @@ function MyBookings({ currentUser, userBookings, deleteBooking, currentBooking }
         <div>
             <FullCalendar
                 defaultView="dayGridMonth"
-                header={{
-                    left: "prev,next",
-                    center: "title",
-                    right: "dayGridMonth,timeGridWeek,timeGridDay"
-                }}
-                plugins={[dayGridPlugin, timeGridPlugin]}
+                plugins={[dayGridPlugin]}
                 events={userBookings.map(booking => {
                     return {
                         title: booking.dance_class.category,
