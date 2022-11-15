@@ -104,7 +104,7 @@ function App() {
           <Route path='/booking' element={<BookingForm danceClass={danceClass} currentUser={currentUser} newBooking={handleNewBooking} />} />
           <Route path='/bookings' element={<MyBookings currentUser={currentUser} userBookings={booking} deleteBooking={handleDeleteBooking} currentBooking={handleCurrentBooking} />} />
         </Routes>
-        <Navbar />
+        <Navbar currentUser={currentUser} />
       </Router>
 
       <ToastContainer />
