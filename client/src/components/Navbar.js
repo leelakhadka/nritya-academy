@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ currentUser }) {
     const navigate = useNavigate()
 
     return (
@@ -12,11 +12,15 @@ function Navbar() {
                             Available Classes
                         </p>
                     </li>
-                    <li className='navbarListItem' onClick={() => navigate('/bookings')}>
-                        <p>
-                            My Schedule
-                        </p>
-                    </li>
+                    {
+                        currentUser.admin ? <></> :
+                            <li className='navbarListItem' onClick={() => navigate('/bookings')}>
+                                <p>
+                                    My Schedule
+                                </p>
+                            </li>
+                    }
+
                     <li className='navbarListItem' onClick={() => navigate('/profile')}>
                         <p>
                             Profile

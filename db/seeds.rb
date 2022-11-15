@@ -8,11 +8,11 @@ admin = User.create(
   )
 
   # Make 
-  [["Jazz","https://st.depositphotos.com/1965665/3640/i/600/depositphotos_36403809-stock-photo-graceful-dancer.jpg"],
-   ["Tap Dance","https://media.istockphoto.com/photos/images-from-a-dance-studio-picture-id1184742104?k=20&m=1184742104&s=612x612&w=0&h=ORBWR9JpRnJ64e-PFEzFEXgNi5sVMJ8ERT2l-nLt5gY="],
-    ["Belly Dance","https://www.cmuse.org/wp-content/uploads/2020/05/learn-belly-dance-lessons-online.jpg"], 
-    ["Salsa","https://www.wikidancesport.com/Attachments/dances/Salsa/Salsa%20-%204.jpg"], 
-    ["Bollywood", "https://res.cloudinary.com/hkf2ycaep/image/fetch/d_project-placeholder.png,f_auto,fl_lossy/https://d23vk1trp0fmbf.cloudfront.net/projects/0c76a571-919d-4faf-8da3-c0a8f141cef1/project-image"]].each do |dance|
+  [["Jazz", "Excellent", "https://st.depositphotos.com/1965665/3640/i/600/depositphotos_36403809-stock-photo-graceful-dancer.jpg"],
+   ["Tap Dance", "Good", "https://media.istockphoto.com/photos/images-from-a-dance-studio-picture-id1184742104?k=20&m=1184742104&s=612x612&w=0&h=ORBWR9JpRnJ64e-PFEzFEXgNi5sVMJ8ERT2l-nLt5gY="],
+    ["Belly Dance", "Peaceful", "https://www.cmuse.org/wp-content/uploads/2020/05/learn-belly-dance-lessons-online.jpg"], 
+    ["Salsa", "Nice", "https://www.wikidancesport.com/Attachments/dances/Salsa/Salsa%20-%204.jpg"], 
+    ["Bollywood", "Very Nice", "https://res.cloudinary.com/hkf2ycaep/image/fetch/d_project-placeholder.png,f_auto,fl_lossy/https://d23vk1trp0fmbf.cloudfront.net/projects/0c76a571-919d-4faf-8da3-c0a8f141cef1/project-image"]].each do |dance|
     # create a game with random data
     dance_class = DanceClass.create(
       category: dance.first,
@@ -38,7 +38,7 @@ admin = User.create(
       dance_class_id: dance_class.id)
 
     Review.create(
-        comment: Faker::Restaurant.review,
+        comment: dance[1],
         rating: Faker::Number.between(from: 1, to: 10),
         user_id: user.id,
         dance_class_id: dance_class.id)

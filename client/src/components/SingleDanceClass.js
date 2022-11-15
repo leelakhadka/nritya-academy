@@ -46,7 +46,7 @@ function SingleDanceClass({ danceClass, user }) {
                                 <p className='singleDanceClassListingElement'>{date}</p>
                                 <p className='singleDanceClassListingElement'>{start_time}</p>
                                 <p className='singleDanceClassListingElement'>{duration} hour</p>
-                                <button className='singleDanceClassBtn' onClick={handleToggle}>Book this class</button>
+                                {user.admin ? <></> : <button className='singleDanceClassBtn' onClick={handleToggle}>Book this class</button>}
                             </div>
                         </li>
                     </ul>
@@ -58,7 +58,7 @@ function SingleDanceClass({ danceClass, user }) {
                     <></> :
                     <div className='review-container'>
                         <ReviewProvider currentUser={user} currentDanceClass={danceClass}>
-                            <ReviewForm />
+                            {user.admin ? <></> : <ReviewForm />}
                             <ReviewStats />
                             <ReviewList />
                         </ReviewProvider>
