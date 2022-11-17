@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
 function BookingForm({ danceClass, currentUser, newBooking }) {
+    let navigate = useNavigate();
 
     const [fee, setFee] = useState('')
     const [userId, setUserId] = useState('')
@@ -25,6 +27,7 @@ function BookingForm({ danceClass, currentUser, newBooking }) {
                     setFee(null);
                     setUserId(null);
                     toast.success("Booked " + danceClass.category + " successfully");
+                    navigate(`/bookings`)
                 })
 
         }

@@ -8,11 +8,11 @@ admin = User.create(
   )
 
   # Make 
-  [["Jazz", "Excellent", "https://st.depositphotos.com/1965665/3640/i/600/depositphotos_36403809-stock-photo-graceful-dancer.jpg"],
-   ["Tap Dance", "Good", "https://media.istockphoto.com/photos/images-from-a-dance-studio-picture-id1184742104?k=20&m=1184742104&s=612x612&w=0&h=ORBWR9JpRnJ64e-PFEzFEXgNi5sVMJ8ERT2l-nLt5gY="],
-    ["Belly Dance", "Peaceful", "https://www.cmuse.org/wp-content/uploads/2020/05/learn-belly-dance-lessons-online.jpg"], 
-    ["Salsa", "Nice", "https://www.wikidancesport.com/Attachments/dances/Salsa/Salsa%20-%204.jpg"], 
-    ["Bollywood", "Very Nice", "https://res.cloudinary.com/hkf2ycaep/image/fetch/d_project-placeholder.png,f_auto,fl_lossy/https://d23vk1trp0fmbf.cloudfront.net/projects/0c76a571-919d-4faf-8da3-c0a8f141cef1/project-image"]].each do |dance|
+  [["Jazz", "Excellent class", "https://st.depositphotos.com/1965665/3640/i/600/depositphotos_36403809-stock-photo-graceful-dancer.jpg"],
+   ["Tap Dance", "My feet are exhausted", "https://media.istockphoto.com/photos/images-from-a-dance-studio-picture-id1184742104?k=20&m=1184742104&s=612x612&w=0&h=ORBWR9JpRnJ64e-PFEzFEXgNi5sVMJ8ERT2l-nLt5gY="],
+    ["Belly Dance", "Awesome teacher", "https://www.cmuse.org/wp-content/uploads/2020/05/learn-belly-dance-lessons-online.jpg"], 
+    ["Salsa", "It was so much fun to dance with my partner and the teacher made it easy to learn", "https://www.wikidancesport.com/Attachments/dances/Salsa/Salsa%20-%204.jpg"], 
+    ["Bollywood", "The best dance class ever!!!!!", "https://res.cloudinary.com/hkf2ycaep/image/fetch/d_project-placeholder.png,f_auto,fl_lossy/https://d23vk1trp0fmbf.cloudfront.net/projects/0c76a571-919d-4faf-8da3-c0a8f141cef1/project-image"]].each do |dance|
     # create a game with random data
     dance_class = DanceClass.create(
       category: dance.first,
